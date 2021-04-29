@@ -23,14 +23,14 @@ runs:
         go get github.com/buildpacks/pack@main
         ;;
       latest-release)
-        tag=$(curl -s https://api.github.com/repos/buildpacks/pack/ko/releases/latest | jq -r '.tag_name')
+        tag=$(curl -s https://api.github.com/repos/buildpacks/pack/releases/latest | jq -r '.tag_name')
         ;;
       *)
         tag="${{ inputs.version }}"
       esac
 
       if [[ ! -z ${tag} ]]; then
-        echo "Installing ko @ ${tag}"
+        echo "Installing pack @ ${tag}"
         curl -fsL https://github.com/buildpacks/pack/releases/download/${tag}/pack-${tag}-linux.tgz | sudo tar xzf - -C /usr/local/bin pack
       fi
 
