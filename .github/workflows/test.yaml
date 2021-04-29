@@ -19,14 +19,14 @@ jobs:
       - run: pack version
 
       # Install an old release.
-      - uses: imjasonh/setup-pack@v0.1
+      - uses: imjasonh/setup-pack@main
         with:
           version: v0.8.0
       - name: Check installed version
         run: pack version
 
       # Install from tip
-      - uses: imjasonh/setup-pack@v0.1
+      - uses: imjasonh/setup-pack@main
         with:
           version: tip
       - name: Check installed version (tip)
