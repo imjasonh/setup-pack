@@ -20,7 +20,7 @@ runs:
       case "${{ inputs.version }}" in
       tip)
         echo "Installing pack using go get"
-        go get github.com/buildpacks/pack@main
+        go get github.com/buildpacks/pack/cmd/pack@main
         ;;
       latest-release)
         tag=$(curl -s https://api.github.com/repos/buildpacks/pack/releases/latest | jq -r '.tag_name')
