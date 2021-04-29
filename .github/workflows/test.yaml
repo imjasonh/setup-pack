@@ -23,7 +23,7 @@ jobs:
         with:
           version: v0.17.0
       - name: Check installed version
-        run: pack version | grep v0.17.0
+        run: pack version
 
       - name: Install from tip
         uses: imjasonh/setup-pack@main
