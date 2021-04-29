@@ -16,14 +16,14 @@ jobs:
 
       # Install and check version
       - uses: imjasonh/setup-pack@main
-      - run: pack version
+      - run: pack build ghcr.io/imjasonh/setup-pack/example --publish --cache-image
 
       - name: Install old release
         uses: imjasonh/setup-pack@main
         with:
           version: v0.17.0
       - name: Check installed version
-        run: pack version
+        run: pack version | grep 0.17.0
 
       - name: Install from tip
         uses: imjasonh/setup-pack@main
@@ -32,4 +32,4 @@ jobs:
       - name: Check installed version (tip)
         run: |
           sudo rm /usr/local/bin/pack # Uninstall previous versions.
-          pack version
+          pack version | grep 0.0.0
