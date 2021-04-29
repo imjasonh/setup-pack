@@ -16,7 +16,7 @@ jobs:
 
       # Install and check version
       - uses: imjasonh/setup-pack@main
-      - run: pack build ghcr.io/${{ github.repository }} --publish --cache-image ghcr.io/${{ github.repository }}
+      - run: pack build ghcr.io/${{ github.repository }} --publish --cache-image ghcr.io/${{ github.repository }} --builder gcr.io/buildpacks/builder:v1
 
       - name: Install old release
         uses: imjasonh/setup-pack@main
